@@ -107,7 +107,9 @@ int main()
 	srand(time(0));
 
 	unsigned int n;
+	std::cout << "Введите длину загадаваемого числа:\n";
 	std::cin >> n;
+	std::cout << "Число сгенерировано, игра началась\n" ;
 
 	Game comp_num(generate_num(n));
 
@@ -126,7 +128,7 @@ int main()
 
 		if (cur_guess == comp_num.value)
 		{
-			std::cout << "������� " << std::endl;
+			std::cout << "Óãàäàíî " << std::endl;
 			system("pause");
 			break;
 		}
@@ -134,10 +136,10 @@ int main()
 		Game cur_game_num(cur_guess);
 		cows = comp_num.HowMuchCows(cur_game_num);
 		bulls = comp_num.HowMuchBulls(cur_game_num);
-		if ((cows < 0) || (bulls < 0)) std::cerr << "�������� ���������� ��������, ������ ����:" << n << std::endl;
+		if ((cows < 0) || (bulls < 0)) std::cerr << "íåâåðíîå êîëè÷åñòâî ðàçðÿäîâ, äîëæíî áûòü:" << n << std::endl;
 		else
 		{
-			std::cout << "�������: " << cows << " �����, " << bulls << " �����" << std::endl;
+			std::cout << "Óãàäàíî: " << cows << " êîðîâ, " << bulls << " áûêîâ" << std::endl;
 		}
 	}
 
